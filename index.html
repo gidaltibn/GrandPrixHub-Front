@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrandPrixHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Menu de Navegação -->
+    <div class="navbar">
+        <a href="#inicio" class="logo">GrandPrixHub</a>
+        <a href="#equipes" class="menu-item">Equipes</a>
+        <a href="#pilotos" class="menu-item">Pilotos</a>
+        <a href="#pistas" class="menu-item">Pistas</a>
+        <a href="#corridas" class="menu-item">Corridas</a>
+        <a href="#resultados" class="menu-item">Resultados</a>
+    </div>
+
+    <main class="main-content">
+        <section id="inicio" class="inicio-section">
+            <div class="parte-textual">
+                <h1 class="titulo">GrandPrixHub</h1>
+                <p class="texto">Seja bem-vindo ao GrandPrixHub, o seu portal de gerenciamento de corridas de Fórmula 1!
+                </p>
+                <p class="texto">Aqui você pode cadastrar equipes, pilotos, pistas, corridas e resultados de corridas.
+                </p>
+                <p class="texto">Para começar, selecione uma das opções no menu acima.</p>
+            </div>
+        </section>
+
+        <!-- Seção de Equipes -->
+        <section id="equipes" class="equipe-section">
+            <section id="todas-equipes" class="todas-equipes-tables">
+                <h2>Equipes</h2>
+                <table id="todas-equipes-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">ID</th>
+                            <th style="width: 85%;">Nome</th>
+                            <th style="width: 10%;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <section id="equipes-cadastradas" class="todas-equipes-tables" style="width: 15%;">
+                <h2>Adicionar ou Editar</h2>
+                <form id="equipe-form">
+                    <input type="text" id="equipe-nome" placeholder="Nome da Equipe" required>
+                    <button type="submit" style="margin-top: 10px; border-radius: 5px;">Salvar Equipe</button>
+                </form>
+            </section>
+        </section>
+
+        <!-- Seção de Pilotos -->
+        <section id="pilotos" class="pilotos-section">
+            <section id="todos-pilotos" class="todos-pilotos-tables">
+                <h2>Pilotos</h2>
+                <table id="pilotos-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%; justify-content: center;">ID</th>
+                            <th style="width: 40%;">Nome</th>
+                            <th style="width: 5%;">Idade</th>
+                            <th style="width: 20%;">Nacionalidade</th>
+                            <th style="width: 20%;">Equipe</th>
+                            <th style="width: 10%;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center;"></tbody>
+                </table>
+            </section>
+            <section id="todos-pilotos" class="todos-pilotos-tables">
+                <form id="piloto-form" class="pilotos-tables" style="position: absolute; right: 5%; top: 10%;">
+                    <h2>Adicionar ou Editar</h2>
+                    <input type="text" id="piloto-nome" placeholder="Nome do Piloto" required style="margin-top: 10px;">
+                    <input type="number" id="piloto-idade" placeholder="Idade" required style="margin-top: 10px;">
+                    <input type="text" id="piloto-nacionalidade" placeholder="Nacionalidade" required
+                        style="margin-top: 10px;">
+                    <input type="number" id="piloto-equipe" placeholder="Equipe" required style="margin-top: 10px;">
+                    <button type="submit" style="margin-top: 10px; border-radius: 5px;">Salvar Piloto</button>
+                </form>
+            </section>
+        </section>
+
+        <!-- Seção de Pistas -->
+        <section id="pistas" class="pistas-section">
+            <section id="todas-pistas" class="todas-pistas-tables">
+                <h2>Pistas</h2>
+                <table id="pistas-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">ID</th>
+                            <th style="width: 50%;">Nome</th>
+                            <th style="width: 35%;">País</th>
+                            <th style="width: 10%;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+            <section id="todas-pistas" class="todas-pistas-tables" style="width: 20%;">
+                <form id="pista-form">
+                    <h2>Adicionar ou Editar</h2>
+                    <input type="text" id="pista-nome" placeholder="Nome da Pista" required style="margin-top: 10px;">
+                    <input type="text" id="pista-pais" placeholder="País" required style="margin-top: 10px;">
+                    <button type="submit" style="margin-top: 10px; border-radius: 5px;">Salvar Pista</button>
+                </form>
+            </section>
+        </section>
+
+        <!-- Seção de Corridas -->
+        <section id="corridas" class="corridas-section">
+            <section id="todas-corridas" class="todas-corridas-tables">
+                <h2>Corridas</h2>
+                <table id="corridas-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">ID</th>
+                            <th style="width: 45%;">Nome</th>
+                            <th style="width: 10%;">Data</th>
+                            <th style="width: 30%;">Pista</th>
+                            <th style="width: 10%;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+            <section id="todas-corridas" class="todas-corridas-tables">
+                <h2>Adicionar ou Editar</h2>
+                <form id="corrida-form">
+                    <input type="text" id="corrida-nome" placeholder="Nome da Corrida" required>
+                    <input type="date" id="corrida-data" placeholder="Data" required>
+                    <input type="number" id="corrida-pista" placeholder="ID da Pista" required>
+                    <button type="submit" style="margin-top: 10px; border-radius: 5px;">Adicionar Corrida</button>
+                </form>
+            </section>
+        </section>
+
+
+        <!-- Seção de Resultados -->
+        <section id="resultados" class="resultados-section">
+            <section id="todos-resultados" class="todos-resultados-tables"
+                style="width: 20%; position: absolute; top: 6%; left: 3%;">
+                <h2>Adicionar ou Editar</h2>
+                <form id="resultado-form">
+                    <input type="number" id="resultado-corrida" placeholder="ID da Corrida" required
+                        style="margin-top: 10px;">
+                    <input type="number" id="resultado-primeiro" placeholder="ID do 1º Piloto" required
+                        style="margin-top: 10px;">
+                    <input type="number" id="resultado-segundo" placeholder="ID do 2º Piloto" required
+                        style="margin-top: 10px;">
+                    <input type="number" id="resultado-terceiro" placeholder="ID do 3º Piloto" required
+                        style="margin-top: 10px;">
+                    <button type="submit" style="margin-top: 10px; border-radius: 5px;">Salvar Resultado</button>
+                </form>
+            </section>
+            <section id="todos-resultados" class="todos-resultados-tables">
+                <h2>Resultados</h2>
+                <table id="resultados-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">ID</th>
+                            <th style="width: 25%;">Corrida</th>
+                            <th style="width: 20%;">1º Piloto</th>
+                            <th style="width: 20%;">2º Piloto</th>
+                            <th style="width: 20%;">3º Piloto</th>
+                            <th style="width: 10%;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

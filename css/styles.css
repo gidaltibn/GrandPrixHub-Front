@@ -1,0 +1,379 @@
+body {
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+input {
+  margin-right: 0.5rem;
+}
+
+button {
+  padding: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.inicio-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/img-inicio.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.equipe-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("../assets/img-equipes.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  padding-top: 5%;
+  justify-content: right;
+}
+
+.todas-equipes-tables {
+  color: #fff;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1rem;
+  width: 25%;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.todas-equipes-tables {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1vw;
+}
+
+.pilotos-section {
+  justify-content: center;
+  background-image: url("../assets/img-ferrari.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 200vh;
+  left: 0;
+  padding-top: 5%;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.todos-pilotos-tables {
+  color: #fff;
+  max-height: 80vh;
+  width: 45%;
+  margin-left: 10px;
+  overflow-y: auto;
+}
+
+.pilotos-tables {
+  color: #fff;
+  max-height: 80vh;
+  width: 20%;
+  margin-left: 10px;
+}
+
+.todos-pilotos-tables {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1vw;
+}
+
+.pistas-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("../assets/img-alpine.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 300vh;
+  left: 0;
+  padding-top: 5%;
+  justify-content: right;
+}
+
+.todas-pistas-tables {
+  color: #fff;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1rem;
+  width: 30%;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.todas-pistas-tables {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1vw;
+}
+
+.corridas-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("../assets/img-rbr.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 400vh;
+  left: 0;
+  padding-top: 3%;
+}
+
+.todas-corridas-tables {
+  color: #fff;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 45%;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.todas-corridas-tables {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1.1vw;
+}
+
+.resultados-section {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-image: url("../assets/img-ferrari-box.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 500vh;
+  left: 0;
+  padding-top: 5%;
+  justify-content: right;
+}
+
+.todos-resultados-tables {
+  color: #fff;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1rem;
+  width: 45%;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.todos-resultados-tables {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1vw;
+}
+
+.parte-textual {
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  position: absolute;
+  height: 50%;
+  width: 100vw;
+  top: 50%;
+  left: 0;
+  justify-items: center;
+  align-items: center;
+}
+
+.titulo {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 3vw;
+}
+
+.texto {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1.5vw;
+}
+
+/* Estilo do menu de navegação */
+.navbar {
+  background-color: #00000095; /* Cor de fundo escura */
+  color: white; /* Cor do texto branco */
+  padding: 0.5rem 0.5rem;
+  padding-right: 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar o menu */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #ab3131; /* Cor do texto ao passar o mouse */
+}
+
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1.5rem; /* Espaçamento entre os links */
+}
+
+.navbar .social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .social-icons a {
+  font-size: 1.2em;
+}
+
+.menu-item {
+  width: auto;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1vw;
+}
+
+/* Transição suave */
+html {
+  scroll-behavior: smooth;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px; /* Ajuste o espaçamento entre os botões conforme necessário */
+}
+
+.action-buttons button {
+  padding: 5px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; /* Adiciona bordas arredondadas */
+}
+
+.action-buttons button:hover {
+  background-color: #555;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.delete-button:hover {
+  background-color: #da190b;
+}
+
+button {
+  padding: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Estilo para as células de ação */
+.actions-cell {
+  display: flex;
+  gap: 5px;
+}

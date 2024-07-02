@@ -75,6 +75,7 @@ function createActionButton(icon, onClickHandler) {
   return button;
 }
 
+// Carregar todas as equipes
 async function loadEquipes() {
   await fetch(`${API_BASE_URL}/equipes/`)
     .then((response) => response.json())
@@ -105,6 +106,7 @@ async function loadEquipes() {
     });
 }
 
+// Adicionar uma nova equipe
 function addEquipe() {
   const nome = document.getElementById("equipe-nome").value;
 
@@ -122,12 +124,14 @@ function addEquipe() {
     });
 }
 
+// Editar uma equipe existente
 function editEquipe(equipe) {
   document.getElementById("equipe-nome").value = equipe.nome;
   document.getElementById("equipe-form").dataset.equipeId = equipe.id;
   document.querySelector("#equipe-form button").innerText = "Atualizar Equipe";
 }
 
+// Atualizar uma equipe existente
 async function updateEquipe(id) {
   const nome = document.getElementById("equipe-nome").value;
   await fetch(`${API_BASE_URL}/equipes/${id}`, {
@@ -143,6 +147,7 @@ async function updateEquipe(id) {
   document.querySelector("#equipe-form button").innerText = "Adicionar Equipe";
 }
 
+// Excluir uma equipe existente
 async function deleteEquipe(id) {
   // Primeiro, obter todos os pilotos para verificar se algum está associado à equipe
   const response = await fetch(`${API_BASE_URL}/piloto/`);
@@ -171,11 +176,13 @@ async function deleteEquipe(id) {
   loadPilotos(); // Recarregar a lista de pilotos para refletir as mudanças
 }
 
+// Obter uma equipe por ID
 async function getEquipeById(id) {
   const response = await fetch(`${API_BASE_URL}/equipes/${id}`);
   return response.json();
 }
 
+// Carregar todos os pilotos
 async function loadPilotos() {
   try {
     const response = await fetch(`${API_BASE_URL}/piloto/`);
@@ -218,11 +225,13 @@ async function loadPilotos() {
   }
 }
 
+// Obter um piloto por ID
 async function getPilotoById(id) {
   const response = await fetch(`${API_BASE_URL}/piloto/${id}`);
   return response.json();
 }
 
+// Adicionar um novo piloto
 function addPiloto() {
   const nome = document.getElementById("piloto-nome").value;
   const idade = document.getElementById("piloto-idade").value;
@@ -243,6 +252,7 @@ function addPiloto() {
     });
 }
 
+// Editar um piloto existente
 function editPiloto(piloto) {
   document.getElementById("piloto-nome").value = piloto.nome;
   document.getElementById("piloto-idade").value = piloto.idade;
@@ -259,6 +269,7 @@ function editPiloto(piloto) {
     });
 }
 
+// Atualizar um piloto existente
 async function updatePiloto(id) {
   const nome = document.getElementById("piloto-nome").value;
   const idade = document.getElementById("piloto-idade").value;
@@ -280,6 +291,7 @@ async function updatePiloto(id) {
   document.querySelector("#piloto-form button").innerText = "Adicionar Piloto";
 }
 
+// Excluir um piloto existente
 async function deletePiloto(id) {
   await fetch(`${API_BASE_URL}/piloto/${id}`, {
     method: "DELETE",
@@ -287,6 +299,7 @@ async function deletePiloto(id) {
   loadPilotos();
 }
 
+// Carregar todas as pistas
 async function loadPistas() {
   await fetch(`${API_BASE_URL}/pista/`)
     .then((response) => response.json())
@@ -315,6 +328,7 @@ async function loadPistas() {
     });
 }
 
+// Adicionar uma nova pista
 function addPista() {
   const nome = document.getElementById("pista-nome").value;
   const pais = document.getElementById("pista-pais").value;
@@ -333,11 +347,13 @@ function addPista() {
     });
 }
 
+// Obter uma pista por ID
 async function getPistaById(id) {
   const response = await fetch(`${API_BASE_URL}/pista/${id}`);
   return response.json();
 }
 
+// Editar uma pista existente
 function editPista(pista) {
   document.getElementById("pista-nome").value = pista.nome;
   document.getElementById("pista-pais").value = pista.pais;
@@ -357,6 +373,7 @@ function editPista(pista) {
   });
 }
 
+// Atualizar uma pista existente
 async function updatePista(id) {
   const nome = document.getElementById("pista-nome").value;
   const pais = document.getElementById("pista-pais").value;
@@ -374,6 +391,7 @@ async function updatePista(id) {
   document.querySelector("#pista-form button").innerText = "Adicionar Pista";
 }
 
+// Excluir uma pista existente
 async function deletePista(id) {
   const corridas = await fetch(`${API_BASE_URL}/corrida/`)
     .then((response) => response.json())
@@ -392,6 +410,7 @@ async function deletePista(id) {
   loadPistas();
 }
 
+// Carregar todas as corridas
 async function loadCorridas() {
   const response = await fetch(`${API_BASE_URL}/corrida/`);
   const data = await response.json();
@@ -420,11 +439,13 @@ async function loadCorridas() {
   }
 }
 
+// Obter uma corrida por ID
 async function getCorridaById(id) {
   const response = await fetch(`${API_BASE_URL}/corrida/${id}`);
   return response.json();
 }
 
+// Adicionar uma nova corrida
 function addCorrida() {
   const nome = document.getElementById("corrida-nome").value;
   const data_corrida = document.getElementById("corrida-data").value;
@@ -447,6 +468,7 @@ function addCorrida() {
     });
 }
 
+// Editar uma corrida existente
 function editCorrida(corrida) {
   document.getElementById("corrida-nome").value = corrida.nome;
   document.getElementById("corrida-data").value = corrida.data_corrida;
@@ -456,6 +478,7 @@ function editCorrida(corrida) {
     "Atualizar Corrida";
 }
 
+// Atualizar uma corrida existente
 async function updateCorrida(id) {
   const nome = document.getElementById("corrida-nome").value;
   const data_corrida = document.getElementById("corrida-data").value;
@@ -475,6 +498,7 @@ async function updateCorrida(id) {
     "Adicionar Corrida";
 }
 
+// Excluir uma corrida existente
 async function deleteCorrida(id) {
   const response = await fetch(`${API_BASE_URL}/resultado/`);
   const resultados = await response.json();
@@ -496,11 +520,13 @@ async function deleteCorrida(id) {
   loadCorridas();
 }
 
+// Converter a data para o formato DD/MM/YYYY
 function convertDate(date) {
   const [year, month, day] = date.split("-");
   return `${day}/${month}/${year}`;
 }
 
+// Carregar todos os resultados
 async function loadResultados() {
   const response = await fetch(`${API_BASE_URL}/resultado/`);
   const data = await response.json();
@@ -534,6 +560,7 @@ async function loadResultados() {
   }
 }
 
+// Adicionar um novo resultado
 function addResultado() {
   const corrida_id = document.getElementById("resultado-corrida").value;
   const primeiro_lugar_id = document.getElementById("resultado-primeiro").value;
@@ -559,6 +586,7 @@ function addResultado() {
     });
 }
 
+// Editar um resultado existente
 function editResultado(resultado) {
   document.getElementById("resultado-corrida").value = resultado.corrida_id;
   document.getElementById("resultado-primeiro").value =
@@ -572,6 +600,7 @@ function editResultado(resultado) {
     "Atualizar Resultado";
 }
 
+// Atualizar um resultado existente
 async function updateResultado(id) {
   const corrida_id = document.getElementById("resultado-corrida").value;
   const primeiro_lugar_id = document.getElementById("resultado-primeiro").value;
@@ -599,6 +628,7 @@ async function updateResultado(id) {
     "Salvar Resultado";
 }
 
+// Excluir um resultado existente
 async function deleteResultado(id) {
   await fetch(`${API_BASE_URL}/resultado/${id}`, {
     method: "DELETE",

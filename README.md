@@ -1,95 +1,78 @@
-
 # GrandPrixHub Front-End
 
-Este é o front-end do projeto GrandPrixHub, um portal de gerenciamento de corridas de Fórmula 1. Este projeto permite cadastrar e gerenciar equipes, pilotos, pistas, corridas e resultados de corridas.
+Este é o repositório do front-end da aplicação GrandPrixHub. A aplicação foi desenvolvida utilizando HTML, CSS e JavaScript para criar uma Single Page Application (SPA) que permite gerenciar equipes, pilotos, pistas, corridas e resultados de corridas de Fórmula 1.
 
-## Funcionalidades
+## Requisitos
 
-- Exibir, adicionar, editar e excluir equipes.
-- Exibir, adicionar, editar e excluir pilotos.
-- Exibir, adicionar, editar e excluir pistas.
-- Exibir, adicionar, editar e excluir corridas.
-- Exibir, adicionar, editar e excluir resultados de corridas.
-
-## Tecnologias Utilizadas
-
-- HTML
-- CSS
-- JavaScript
+- Navegador web moderno (Google Chrome, Mozilla Firefox, etc.)
+- Servidor web para servir os arquivos HTML e JavaScript (opcional para desenvolvimento local)
 
 ## Estrutura do Projeto
 
-```
-GrandPrixHub-Front
-├── assets
-│   ├── img-equipes.png
-│   ├── img-ferrari-box.png
-│   ├── img-ferrari.png
-│   ├── img-inicio.png
-│   ├── img-rbr.png
-│   ├── img-alpine.png
-|   └── img-box.png
-├── css
-│   └── styles.css
-├── js
-│   └── scripts.js
-├── index.html
-└── README.md
-```
+- `index.html`: Página principal da aplicação.
+- `css/styles.css`: Arquivo de estilos CSS.
+- `js/scripts.js`: Arquivo JavaScript com a lógica da aplicação.
 
-## Como Executar
+## Instalação
 
-1. Clone o repositório para a sua máquina local:
+1. Clone o repositório:
+   git clone https://github.com/gidaltibn/GrandPrixHub-Front.git
 
-```sh
-git clone https://github.com/gidaltibn/grandprixhub-front.git
-```
+## Executando a Aplicação
 
-2. Navegue até o diretório do projeto:
+1. Abra o arquivo `index.html` em um navegador web.
 
-```sh
-cd grandprixhub-front
-```
+2. A aplicação se comunicará com a API back-end para carregar e manipular os dados.
 
-3. Abra o arquivo `index.html` no seu navegador.
+## Funcionalidades
 
-## Estrutura do Código
+A aplicação possui as seguintes funcionalidades:
 
-### HTML
+- Gerenciamento de Equipes:
 
-O arquivo `index.html` contém a estrutura básica do site, incluindo o menu de navegação e as seções para equipes, pilotos, pistas, corridas e resultados.
+  - Adicionar uma nova equipe.
+  - Atualizar uma equipe existente.
+  - Excluir uma equipe (verificação de pilotos associados antes da exclusão).
 
-### CSS
+- Gerenciamento de Pilotos:
 
-O arquivo `styles.css` contém os estilos para o site, incluindo a estilização para o menu de navegação, as seções e as tabelas.
+  - Adicionar um novo piloto.
+  - Atualizar um piloto existente.
+  - Excluir um piloto.
 
-### JavaScript
+- Gerenciamento de Pistas:
 
-O arquivo `scripts.js` contém o código JavaScript que lida com a interação com a API back-end, carregamento dos dados, e manipulação do DOM para adicionar, editar e excluir elementos.
+  - Adicionar uma nova pista.
+  - Atualizar uma pista existente.
+  - Excluir uma pista (verificação de corridas associadas antes da exclusão).
 
-### assets
+- Gerenciamento de Corridas:
 
-O diretório `assets` contém as imagens utilizadas como fundo nas diferentes seções do site.
+  - Adicionar uma nova corrida.
+  - Atualizar uma corrida existente.
+  - Excluir uma corrida (verificação de resultados associados antes da exclusão).
 
-## Contribuição
+- Gerenciamento de Resultados:
+  - Adicionar um novo resultado.
+  - Atualizar um resultado existente.
+  - Excluir um resultado.
 
-Se você deseja contribuir para este projeto, por favor, siga os passos abaixo:
+## Relacionamento entre Classes e Entidades
 
-1. Faça um fork do repositório.
-2. Crie uma nova branch para a sua feature ou correção de bug: `git checkout -b minha-feature`
-3. Commit suas mudanças: `git commit -m 'Minha nova feature'`
-4. Envie para a branch original: `git push origin minha-feature`
-5. Abra um Pull Request.
+A aplicação front-end interage com as seguintes entidades e seus relacionamentos:
 
-## Licença
+- **Equipe**: Gerencia as equipes de Fórmula 1. Cada equipe pode ter vários pilotos associados.
+- **Piloto**: Gerencia os pilotos de Fórmula 1. Cada piloto pertence a uma equipe específica.
+- **Pista**: Gerencia as pistas de corrida. Cada pista pode ser associada a várias corridas.
+- **Corrida**: Gerencia as corridas de Fórmula 1. Cada corrida é realizada em uma pista específica e pode ter vários resultados associados.
+- **Resultado**: Gerencia os resultados das corridas, associando os pilotos às suas respectivas posições.
 
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+## Criatividade e Inovação
 
-## Contato
+A aplicação front-end foi desenvolvida com uma interface intuitiva e responsiva, utilizando JavaScript para realizar chamadas assíncronas à API e atualizar a interface do usuário dinamicamente. A aplicação é capaz de gerenciar dados de Fórmula 1 de maneira eficiente e prática.
 
-Se você tiver alguma dúvida, sugestão ou feedback, sinta-se à vontade para entrar em contato.
+## Autor
 
-**Autor:** Gidalti Brito Nascimento  
-**Email:** gidaltibn@outlook.com
-
-Este é um trabalho MVP desenvolvido para o módulo de desenvolvimento Fullstack básico.
+- Gidalti Brito Nascimento
+- [Github](https://github.com/gidaltibn)
+- [Email](mailto:gidaltibn@outlook.com)

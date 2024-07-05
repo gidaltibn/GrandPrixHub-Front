@@ -41,10 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       if (
         document.querySelector("#corrida-form button").innerText ===
-        "Salvar Corrida"
+        "Adicionar Corrida"
       ) {
         addCorrida();
       } else {
+        console.log("update corrida");
         updateCorrida(
           document.getElementById("corrida-form").dataset.corridaId
         );
@@ -64,6 +65,20 @@ document.addEventListener("DOMContentLoaded", function () {
         updateResultado(
           document.getElementById("resultado-form").dataset.resultadoId
         );
+      }
+    });
+
+  document
+    .getElementById("piloto-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      const pilotoFormButton = document.querySelector("#piloto-form button");
+      if (pilotoFormButton.innerText === "Salvar Piloto") {
+        addPiloto();
+      } else {
+        const pilotoId =
+          document.getElementById("piloto-form").dataset.pilotoId;
+        updatePiloto(pilotoId);
       }
     });
 });
@@ -109,13 +124,14 @@ async function loadEquipes() {
 // Adicionar uma nova equipe
 function addEquipe() {
   const nome = document.getElementById("equipe-nome").value;
+  const id = 0;
 
   fetch(`${API_BASE_URL}/equipes/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ nome }),
+    body: JSON.stringify({ id, nome }),
   })
     .then((response) => response.json())
     .then(() => {
@@ -237,13 +253,14 @@ function addPiloto() {
   const idade = document.getElementById("piloto-idade").value;
   const nacionalidade = document.getElementById("piloto-nacionalidade").value;
   const equipe_id = document.getElementById("piloto-equipe").value;
+  const id = 0;
 
   fetch(`${API_BASE_URL}/piloto/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ nome, idade, nacionalidade, equipe_id }),
+    body: JSON.stringify({ id, nome, idade, nacionalidade, equipe_id }),
   })
     .then((response) => response.json())
     .then((data) => {
@@ -260,13 +277,6 @@ function editPiloto(piloto) {
   document.getElementById("piloto-equipe").value = piloto.equipe_id;
   document.getElementById("piloto-form").dataset.pilotoId = piloto.id;
   document.querySelector("#piloto-form button").innerText = "Atualizar Piloto";
-
-  document
-    .getElementById("piloto-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-      updatePiloto(piloto.id);
-    });
 }
 
 // Atualizar um piloto existente
@@ -284,10 +294,9 @@ async function updatePiloto(id) {
     body: JSON.stringify({ id, nome, idade, nacionalidade, equipe_id }),
   });
   loadPilotos();
+  pilotoForm.reset();
   document.getElementById("piloto-form").reset();
-  document
-    .getElementById("piloto-form")
-    .removeEventListener("submit", updatePiloto);
+  document.getElementById("piloto-form").dataset.pilotoId = "";
   document.querySelector("#piloto-form button").innerText = "Adicionar Piloto";
 }
 
@@ -332,13 +341,14 @@ async function loadPistas() {
 function addPista() {
   const nome = document.getElementById("pista-nome").value;
   const pais = document.getElementById("pista-pais").value;
+  const id = 0;
 
   fetch(`${API_BASE_URL}/pista/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ nome, pais }),
+    body: JSON.stringify({ id, nome, pais }),
   })
     .then((response) => response.json())
     .then((data) => {
@@ -386,6 +396,7 @@ async function updatePista(id) {
     body: JSON.stringify({ id, nome, pais }),
   });
   loadPistas();
+  pistaForm.reset();
   document.getElementById("pista-form").reset();
   document.getElementById("pista-form").dataset.pistaId = "";
   document.querySelector("#pista-form button").innerText = "Adicionar Pista";
@@ -450,21 +461,19 @@ function addCorrida() {
   const nome = document.getElementById("corrida-nome").value;
   const data_corrida = document.getElementById("corrida-data").value;
   const pista_id = document.getElementById("corrida-pista").value;
+  const id = 0;
 
   fetch(`${API_BASE_URL}/corrida/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ nome, data_corrida, pista_id }),
+    body: JSON.stringify({ id, nome, data_corrida, pista_id }),
   })
     .then((response) => response.json())
     .then((data) => {
       loadCorridas();
       document.getElementById("corrida-form").reset();
-      delete document.getElementById("corrida-form").dataset.corridaId;
-      document.querySelector("#corrida-form button").innerText =
-        "Adicionar Corrida";
     });
 }
 
@@ -566,6 +575,7 @@ function addResultado() {
   const primeiro_lugar_id = document.getElementById("resultado-primeiro").value;
   const segundo_lugar_id = document.getElementById("resultado-segundo").value;
   const terceiro_lugar_id = document.getElementById("resultado-terceiro").value;
+  const id = 0;
 
   fetch(`${API_BASE_URL}/resultado/`, {
     method: "POST",
@@ -573,6 +583,7 @@ function addResultado() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      id,
       corrida_id,
       primeiro_lugar_id,
       segundo_lugar_id,
